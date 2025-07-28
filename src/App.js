@@ -57,7 +57,7 @@ function App() {
   },[navBarNameList])
 
   return (
-    <div style={{padding:50,backgroundImage:`url(${backgroundImage})`,height:"100vh",backgroundSize:"cover"}}>
+    <div style={{padding:50,backgroundImage:`url(${backgroundImage})`,backgroundSize:"cover",backgroundPosition:"center",minHeight:"100vh"}}>
       <Header/>
       <AddContacts addcontact={addContact} />
       <Spacer/>
