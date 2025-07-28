@@ -5,6 +5,7 @@ import icon from "../assets/delete.png";
 const ContactCard = (props) => {
 
     const contactList = (props.navBarNameList).map((element,index) => {
+        console.log(element.carrier);
         return (
             <div className="ui cards" style={{margin:15}} key={index}>
                 <div className="card">
@@ -15,6 +16,7 @@ const ContactCard = (props) => {
                     <div className="content" style={{textAlign:"center"}}>
                         <div className="header">{element.name}</div>
                         <div className="description">{element.contactNumber}</div>
+                        <div className="description">{element.provider}</div>
                     </div>
                 </div>
 

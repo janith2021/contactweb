@@ -1,10 +1,12 @@
 import React,{useState} from "react";
 import Swal from 'sweetalert2'
+import validatePhoneNumber from "../validator/mobileNumberValidator";
 
 const AddContact = (props) => {
     const [name,setName] = useState("");
     const [contactNumber,setContactNumber] = useState("");
-    const handleSubmit = (e) => {
+    var temporaryPhonenumber;
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if(!name.trim() || !contactNumber.trim()){
             Swal.fire({
@@ -24,15 +26,32 @@ const AddContact = (props) => {
                 })
             return;
         }
-        props.addcontact({name:name,contactNumber:contactNumber});
-        setName("")
-        setContactNumber("")
-        Swal.fire({
-                title: 'Success!',
-                text: 'Contact Number added successfully',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-                })
+
+        if(contactNumber.startsWith('0')){
+            temporaryPhonenumber = contactNumber.replace(/^0/,'94')
+        }
+        
+        const resData = await validatePhoneNumber(temporaryPhonenumber);
+
+        if(resData != null && resData.valid){
+            console.log(resData.carrier)
+            props.addcontact({name:name,contactNumber:contactNumber,provider:resData.carrier});
+            setName("")
+            setContactNumber("")
+            Swal.fire({
+                    title: 'Success!',
+                    text: 'Contact Number added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                    })
+        }else {
+            Swal.fire({
+                    title: 'Error!',
+                    text: 'Invalid Mobile Number',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                    })
+        }
     }
     return (
         <div style={{marginTop:"20px"}}>
