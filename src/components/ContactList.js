@@ -14,9 +14,11 @@ const ContactCard = (props) => {
                     </div>
                     <img src={logo} style={{margin:10}} alt="Profile Icon"/>
                     <div className="content" style={{textAlign:"center"}}>
-                        <div className="header">{element.name}</div>
-                        <div className="description">{element.contactNumber}</div>
-                        <div className="description">{element.provider}</div>
+                        <div className="header" style={{color:"#B9375D"}}>{element.name}</div>
+                        <div className="description" style={{fontSize:"1.25rem",fontWeight:"bold",color:"#4379F2"}}>{element.contactNumber}</div>
+                        <div className="description" style={{fontSize:"1.25rem",fontWeight:"bold",color:"#006BFF"}}>{element.provider}</div>
+                        <div className="description" style={{fontSize:"1.25rem",fontWeight:"bold",color:"#6EC207"}}>{element.type}</div>
+                        <div className="description" style={{fontSize:"1.25rem",fontWeight:"bold",color:"#FF6600"}}>{element.location}</div>
                     </div>
                 </div>
 

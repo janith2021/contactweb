@@ -35,7 +35,7 @@ const AddContact = (props) => {
 
         if(resData != null && resData.valid){
             console.log(resData.carrier)
-            props.addcontact({name:name,contactNumber:contactNumber,provider:resData.carrier});
+            props.addcontact({name:name,contactNumber:contactNumber,provider:resData.carrier,type:resData.type,location:resData.location});
             setName("")
             setContactNumber("")
             Swal.fire({
@@ -54,7 +54,7 @@ const AddContact = (props) => {
         }
     }
     return (
-        <div style={{marginTop:"20px"}}>
+        <div style={{marginTop:"20px",backgroundColor:"white",padding:"40px",borderRadius:"20px"}}>
             <form className="ui form" onSubmit={handleSubmit}>
                 <div className="field">
                     <label style={{fontSize:"1.25rem",color:"#4379F2",fontWeight:"bold"}}>Name</label>
@@ -66,7 +66,7 @@ const AddContact = (props) => {
                     <input type="tel" name="contactNumber" placeholder="Contact Number" value={contactNumber} onChange={(e)=> setContactNumber(e.target.value)} style={{fontSize:"1.25rem",color:"#4300FF",fontWeight:"bold",borderColor:"#1C1678",borderWidth:"5px"}}/>
                 </div>
                 <div style={{textAlign:"center"}}>
-                    <button className="ui primary button" type="submit" style={{alignSelf:"center",backgroundColor:"green",width:"50%",fontSize:"1.25rem",fontWeight:"bold"} }>Add Contact Number</button>
+                    <button className="ui primary button" type="submit" style={{alignSelf:"center",backgroundColor:"green",width:"25%",fontSize:"1.25rem",fontWeight:"bold"} }>Add Contact Number</button>
                 </div>
             </form>
         </div>
