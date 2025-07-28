@@ -11,7 +11,7 @@ const Header = (props) =>{
     //     </div>
     // );
     return (
-        <div style={{textAlign:"center",color:"#640D5F"}}>
+        <div style={{textAlign:"center"}}>
             <h1>My Contact List</h1>
         </div>
     );

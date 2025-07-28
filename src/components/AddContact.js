@@ -66,7 +66,7 @@ const AddContact = (props) => {
                     <input type="tel" name="contactNumber" placeholder="Contact Number" value={contactNumber} onChange={(e)=> setContactNumber(e.target.value)} style={{fontSize:"1.25rem",color:"#4300FF",fontWeight:"bold",borderColor:"#1C1678",borderWidth:"5px"}}/>
                 </div>
                 <div style={{textAlign:"center"}}>
-                    <button className="ui primary button" type="submit" style={{alignSelf:"center",backgroundColor:"green",width:"100%",fontSize:"1.25rem",fontWeight:"bold"} }>Add Contact Number</button>
+                    <button className="ui primary button" type="submit" style={{alignSelf:"center",backgroundColor:"green",width:"75%",fontSize:"1rem",fontWeight:"bold"} }>Add Contact Number</button>
                 </div>
             </form>
         </div>
