@@ -35,16 +35,16 @@ const AddContact = (props) => {
                 })
     }
     return (
-        <div>
+        <div style={{marginTop:"20px"}}>
             <form className="ui form" onSubmit={handleSubmit}>
                 <div className="field">
                     <label style={{fontSize:"1.25rem",color:"#4379F2",fontWeight:"bold"}}>Name</label>
-                    <input type="text" name="firstName" placeholder="First Name" value={name} onChange={(e)=> setName(e.target.value)} style={{fontSize:"20px",color:"#4300FF",fontWeight:"bold",borderColor:"#1C1678",borderWidth:"5px"}}
+                    <input type="text" name="firstName" placeholder="First Name" value={name} onChange={(e)=> setName(e.target.value)} style={{fontSize:"1.25rem",color:"#4300FF",fontWeight:"bold",borderColor:"#1C1678",borderWidth:"5px"}}
                     />
                 </div>
                 <div className="field">
                     <label style={{fontSize:"1.25rem",color:"#4379F2",fontWeight:"bold"}}>Contact Number</label>
-                    <input type="tel" name="contactNumber" placeholder="Contact Number" value={contactNumber} onChange={(e)=> setContactNumber(e.target.value)} style={{fontSize:"20px",color:"#4300FF",fontWeight:"bold",borderColor:"#1C1678",borderWidth:"5px"}}/>
+                    <input type="tel" name="contactNumber" placeholder="Contact Number" value={contactNumber} onChange={(e)=> setContactNumber(e.target.value)} style={{fontSize:"1.25rem",color:"#4300FF",fontWeight:"bold",borderColor:"#1C1678",borderWidth:"5px"}}/>
                 </div>
                 <div style={{textAlign:"center"}}>
                     <button className="ui primary button" type="submit" style={{alignSelf:"center",backgroundColor:"green",width:"50%",fontSize:"1.25rem",fontWeight:"bold"} }>Add Contact Number</button>
